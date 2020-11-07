@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import DurationTabs, { DURATION_TABS } from "../duration-tabs/duration-tabs";
+import DurationTabs from "../duration-tabs/duration-tabs";
 
 import { AppContext } from "../../App";
 import UnitTabs from "../unit-tabs/unit-tabs";

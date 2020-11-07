@@ -13,27 +13,18 @@ export const AppContext = createContext();
 export default function App() {
   const [state, setState] = useState({
     selectedDurationTab: DURATION_TABS[0].id,
-    selectedUnit: UNIT_TABS[0].id,
-    summaryData: null
+    selectedUnit: UNIT_TABS[0].id
   });
-
-  const onLocationChange = useCallback(
-    (location) => {
-      WeatherService.getCurrentData(location)
-        .then((data) => {
-          setState({
-            ...state,
-            summaryData: data
-          });
-        })
-        .catch((err) => console.warn(err));
-    },
-    [state]
-  );
+  const [location, setLocation] = useState();
+  const [summaryData, setSummaryData] = useState();
 
   useEffect(() => {
-    onLocationChange("Bratislava");
-  }, [onLocationChange]);
+    WeatherService.getCurrentData(location)
+      .then((data) => {
+        setSummaryData(data);
+      })
+      .catch((err) => console.warn(err));
+  }, [location]);
 
   const selectDurationTab = (id) => {
     setState({
@@ -52,9 +43,10 @@ export default function App() {
     <AppContext.Provider
       value={{
         ...state,
+        summaryData,
         selectDurationTab,
         selectUnit,
-        changeLocation: onLocationChange
+        changeLocation: setLocation
       }}
     >
       <Container>

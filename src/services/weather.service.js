@@ -14,7 +14,7 @@ const getOneCallApiUrl = ({
   return `${API_URL}onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${APP_ID}&units=metric`;
 };
 
-const CACHE_KEEP_TIME = 60 * 60;
+// const CACHE_KEEP_TIME = 60 * 60;
 
 const getCurrentData = async (location) => {
   try {

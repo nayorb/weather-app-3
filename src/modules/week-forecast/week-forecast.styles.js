@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import ScrollContainer from "react-indiana-drag-scroll";
 
-import COLORS from "../../constants/colors";
-const { default: theme } = require("../../utils/theme");
+// const { default: theme } = require("../../utils/theme");
 
 export const Container = styled(ScrollContainer)`
   display: grid;

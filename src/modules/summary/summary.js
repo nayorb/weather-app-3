@@ -7,8 +7,6 @@ import NumberIndex, {
 import WeatherIcon from "../../components/weather-icon/weather-icon";
 import { UNIT_CAPTION } from "../../constants";
 import useWeatherData from "../../hooks/useWeatherData";
-import { BiSearch } from "react-icons/bi";
-import { MdLocationSearching } from "react-icons/md";
 import { AppContext } from "../../App";
 import CitySearch from "../city-search/city-search";
 const {
@@ -16,11 +14,7 @@ const {
   WeekDay,
   Time,
   TimeInfo,
-  Location,
-  LocationInputContainer,
-  LocationInput,
-  LocationInputIcon,
-  LocationInputLocateButton
+  Location
 } = require("./summary.styles");
 
 const Summary = () => {
@@ -32,18 +26,9 @@ const Summary = () => {
     loadingWeatherData
   } = useWeatherData();
 
-  const [query, setQuery] = useState("");
-
   const windowWidth = useWindowWidth();
 
-  const { changeLocation } = useContext(AppContext);
-
   if (loadingWeatherData) return <></>;
-
-  const onSearch = () => {
-    changeLocation(query);
-    setQuery("");
-  };
 
   return (
     <Container>

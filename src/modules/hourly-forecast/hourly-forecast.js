@@ -10,7 +10,6 @@ import {
 import IconInfo from "../../components/icon-info/icon-info";
 
 import WeatherIcon from "../../components/weather-icon/weather-icon";
-import COLORS from "../../constants/colors";
 
 import useWeatherData from "../../hooks/useWeatherData";
 const { Container, FooterGridContainer } = require("./hourly-forecast.styles");

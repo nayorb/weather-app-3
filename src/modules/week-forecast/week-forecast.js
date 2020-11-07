@@ -21,7 +21,7 @@ const WeekForecast = () => {
   return (
     <Container>
       {daily.map((day) => (
-        <InfoCard>
+        <InfoCard key={day.dt}>
           <InfoCardTitle
             style={{
               justifyContent: "space-between"

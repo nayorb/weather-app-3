@@ -10,9 +10,7 @@ import {
   LocationInput,
   LocationInputLocateButton,
   SelectMenu,
-  SelectMenuItem,
-  InputContainer,
-  Input
+  SelectMenuItem
 } from "./city-search.styles";
 
 const CitySearch = () => {
