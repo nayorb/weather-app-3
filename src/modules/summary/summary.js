@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { useWindowWidth } from "@react-hook/window-size";
 
 import NumberIndex, {
@@ -7,7 +7,7 @@ import NumberIndex, {
 import WeatherIcon from "../../components/weather-icon/weather-icon";
 import { UNIT_CAPTION } from "../../constants";
 import useWeatherData from "../../hooks/useWeatherData";
-import { AppContext } from "../../App";
+
 import CitySearch from "../city-search/city-search";
 const {
   Container,

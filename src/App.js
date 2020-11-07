@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import Dashboard from "./modules/dashboard/dashboard";
 import Summary from "./modules/summary/summary";
 import { DURATION_TABS } from "./modules/duration-tabs/duration-tabs";
