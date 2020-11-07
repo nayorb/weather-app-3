@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
-import { CURRENT_DATA } from "./mock-data";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import Dashboard from "./modules/dashboard/dashboard";
 import Summary from "./modules/summary/summary";
 import { DURATION_TABS } from "./modules/duration-tabs/duration-tabs";
@@ -18,20 +17,23 @@ export default function App() {
     summaryData: null
   });
 
-  const onLocationChange = (location) => {
-    WeatherService.getCurrentData(location)
-      .then((data) => {
-        setState({
-          ...state,
-          summaryData: data
-        });
-      })
-      .catch((err) => console.warn(err));
-  };
+  const onLocationChange = useCallback(
+    (location) => {
+      WeatherService.getCurrentData(location)
+        .then((data) => {
+          setState({
+            ...state,
+            summaryData: data
+          });
+        })
+        .catch((err) => console.warn(err));
+    },
+    [state]
+  );
 
   useEffect(() => {
     onLocationChange("Bratislava");
-  }, []);
+  }, [onLocationChange]);
 
   const selectDurationTab = (id) => {
     setState({
