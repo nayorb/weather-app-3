@@ -12,12 +12,13 @@ export const DURATION_TABS = [
   }
 ];
 
-const DurationTabs = ({ selected, onSelect }) => {
+const DurationTabs = ({ selected = DURATION_TABS[0].id, onSelect }) => {
   return (
-    <Container>
+    <Container data-testid="duration-tabs-container">
       {DURATION_TABS.map((tab) => (
         <Item
           data-testid={tab.id}
+          className={selected === tab.id ? "selected" : ""}
           key={tab.id}
           selected={selected === tab.id}
           onClick={() => onSelect(tab.id)}

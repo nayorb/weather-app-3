@@ -19,6 +19,8 @@ const UnitTabs = ({ selected, onSelect }) => {
       {UNIT_TABS.map((tab) => (
         <Item
           key={tab.id}
+          data-testid={tab.id}
+          className={selected === tab.id ? "selected" : ""}
           selected={selected === tab.id}
           onClick={() => onSelect(tab.id)}
         >
