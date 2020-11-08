@@ -7,6 +7,7 @@ import "./normalize.css";
 import "./styles.css";
 import WeatherService from "./services/weather.service";
 import { Container } from "./App.styles";
+import { parseWeatherData } from "./utils/weather-data.util";
 
 export const AppContext = createContext();
 
@@ -21,7 +22,7 @@ export default function App() {
   useEffect(() => {
     WeatherService.getCurrentData(location)
       .then((data) => {
-        setSummaryData(data);
+        setSummaryData(parseWeatherData(data));
       })
       .catch((err) => console.warn(err));
   }, [location]);
