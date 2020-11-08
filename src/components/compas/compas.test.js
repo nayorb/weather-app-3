@@ -1,6 +1,6 @@
 import React from "react";
 import Compas from "./compas";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 describe("DurationTabs (component)", () => {
   test("renders", () => {
