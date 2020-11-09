@@ -6,8 +6,8 @@ const { Container, Text } = require("./icon-info.styles");
 const IconInfo = ({ iconColor = COLORS.BLACK, iconSize = 24, Icon, text }) => {
   return (
     <Container>
-      <Icon size={iconSize} color={iconColor} />
-      <Text>{text}</Text>
+      <Icon data-testid="icon" size={iconSize} color={iconColor} />
+      <Text data-testid="text">{text}</Text>
     </Container>
   );
 };
